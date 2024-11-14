@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="https://logging.apache.org/xml/ns"
+               xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="
+                   https://logging.apache.org/xml/ns
+                   https://logging.apache.org/xml/ns/log4j-config-2.xsd">
+
+		<Appenders>
+			<RollingFile name="FILE"
+	   				filename="app.log"
+	   				filePattern="app.%d{yyyy-MM-dd}.%i.log"> <!-- add to file and its destination -->
+	   			<Policies>
+					   <OnStartupTriggeringPolicy />
+					   <SizeBasedTriggeringPolicy />
+					   <TimeBasedTriggeringPolicy />
+				</Policies>
+			</RollingFile>
+			
+			<Console name="CONSOLE">  <!-- adds logs to console -->
+				<PatternLayout pattern="%p - %m%n"/>
+			</Console>
+		</Appenders>
+		
+		<Loggers>
+			<Root level="TRACE">
+            	<AppenderRef ref="CONSOLE" />
+            	<AppenderRef ref="FILE"/>
+        	</Root>
+		</Loggers>
+
+</Configuration>
