@@ -15,6 +15,7 @@ public class Hello {
 		log.info("Info Message");
 		log.debug("Debug Message");
 		log.trace("Trace Message");
+		//hello
 
 	}
 
